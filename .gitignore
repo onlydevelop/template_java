@@ -1,6 +1,8 @@
 build/
+bin/
 .gradle/
 .idea/
 *.iml
 *.ipr
 *.iws
+.project
