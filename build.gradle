@@ -3,7 +3,7 @@ plugins {
     id 'idea'
     id 'eclipse'
     id 'groovy'
-    id 'com.adarshr.test-logger' version '1.7.0'
+    id 'com.adarshr.test-logger' version '2.0.0'
 }
 
 version = '1.0.0'
@@ -15,10 +15,12 @@ repositories {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
-    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
-    testRuntime 'com.athaydes:spock-reports:1.2.7'
+    compile 'org.slf4j:slf4j-api:1.7.30'
+    compile 'org.slf4j:slf4j-log4j12:1.7.30'
+    compile 'log4j:log4j:1.2.17'
+    testCompile 'junit:junit:4.13'
+    testCompile 'org.codehaus.groovy:groovy-all:3.0.0'
+    testCompile 'org.spockframework:spock-core:2.0-M2-groovy-3.0'
 }
 
 testlogger {
