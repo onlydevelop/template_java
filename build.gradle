@@ -14,13 +14,22 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    test {
+        groovy {
+            srcDir 'src/test/groovy'
+        }
+    }
+}
+
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.30'
-    compile 'org.slf4j:slf4j-log4j12:1.7.30'
-    compile 'log4j:log4j:1.2.17'
-    testCompile 'junit:junit:4.13'
-    testCompile 'org.codehaus.groovy:groovy-all:3.0.0'
-    testCompile 'org.spockframework:spock-core:2.0-M2-groovy-3.0'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-log4j12:1.7.30'
+    implementation 'log4j:log4j:1.2.17'
+    testImplementation 'org.unbroken-dome.gradle-plugins:gradle-testsets-plugin:1.4.2'
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.0'
+    testImplementation 'org.spockframework:spock-core:2.0-M2-groovy-3.0'
 }
 
 testlogger {
@@ -46,7 +55,7 @@ testlogger {
     showSummary true
 
     // set to true to see simple class names
-    showSimpleNames false
+    showSimpleNames true
 
     // set to false to hide passed tests
     showPassed true
@@ -58,7 +67,7 @@ testlogger {
     showFailed true
 
     // enable to see standard out and error streams inline with the test results
-    showStandardStreams false
+    showStandardStreams true
 
     // set to false to hide passed standard out and error streams
     showPassedStandardStreams true
